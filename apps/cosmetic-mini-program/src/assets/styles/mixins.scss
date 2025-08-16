@@ -1,0 +1,137 @@
+// SCSS 混入 (Mixins)
+@import './variables.scss';
+
+// 文字省略
+@mixin text-ellipsis($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Flex 布局
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// 卡片样式
+@mixin card-style {
+  background: $neutral-100;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-base;
+  padding: $spacing-lg;
+}
+
+// 按钮样式
+@mixin button-primary {
+  background: linear-gradient(135deg, $accent-gold, #E6C547);
+  color: $neutral-100;
+  border: none;
+  border-radius: $border-radius-xl;
+  padding: $spacing-base $spacing-xl;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  transition: all $transition-base;
+  
+  &:hover {
+    transform: translateY(-2rpx);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin button-secondary {
+  background: $primary-blue;
+  color: $neutral-600;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius-xl;
+  padding: $spacing-base $spacing-xl;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  transition: all $transition-base;
+  
+  &:hover {
+    background: darken($primary-blue, 5%);
+  }
+}
+
+// 输入框样式
+@mixin input-style {
+  background: $neutral-100;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius-base;
+  padding: $spacing-base;
+  font-size: $font-size-base;
+  color: $neutral-600;
+  transition: border-color $transition-base;
+  
+  &:focus {
+    border-color: $accent-gold;
+    outline: none;
+  }
+  
+  &::placeholder {
+    color: $neutral-400;
+  }
+}
+
+// 响应式断点
+@mixin mobile {
+  @media (max-width: 750rpx) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 751rpx) and (max-width: 1200rpx) {
+    @content;
+  }
+}
+
+// 安全区域适配
+@mixin safe-area-padding {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// 1px 边框解决方案
+@mixin border-1px($color: $border-color, $position: bottom) {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    #{$position}: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $color;
+    transform: scaleY(0.5);
+    transform-origin: 0 #{$position};
+  }
+}

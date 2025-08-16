@@ -1,0 +1,68 @@
+// 设计系统变量定义
+
+// 色彩方案 (奶油风 + 浅蓝色调)
+// 主色调
+$primary-cream: #F5F1EB;      // 奶油白
+$primary-blue: #E8F4F8;       // 浅蓝色
+$accent-gold: #D4AF37;        // 金色点缀
+$accent-rose: #F4C2C2;        // 玫瑰粉
+
+// 中性色
+$neutral-100: #FEFEFE;        // 纯白
+$neutral-200: #F8F8F8;        // 浅灰
+$neutral-300: #E5E5E5;        // 中灰
+$neutral-400: #BDBDBD;        // 深灰
+$neutral-500: #757575;        // 文字灰
+$neutral-600: #424242;        // 深文字
+
+// 功能色
+$success: #4CAF50;            // 成功绿
+$warning: #FF9800;            // 警告橙
+$error: #F44336;              // 错误红
+$info: #2196F3;               // 信息蓝
+
+// 字体系统
+// 字体大小
+$font-size-xs: 24rpx;         // 12px
+$font-size-sm: 28rpx;         // 14px
+$font-size-base: 32rpx;       // 16px
+$font-size-lg: 36rpx;         // 18px
+$font-size-xl: 40rpx;         // 20px
+$font-size-2xl: 48rpx;        // 24px
+$font-size-3xl: 56rpx;        // 28px
+
+// 字重
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// 间距系统
+$spacing-xs: 8rpx;            // 4px
+$spacing-sm: 16rpx;           // 8px
+$spacing-base: 32rpx;         // 16px
+$spacing-lg: 48rpx;           // 24px
+$spacing-xl: 64rpx;           // 32px
+$spacing-2xl: 96rpx;          // 48px
+
+// 圆角
+$border-radius-sm: 8rpx;      // 4px
+$border-radius-base: 16rpx;   // 8px
+$border-radius-lg: 24rpx;     // 12px
+$border-radius-xl: 32rpx;     // 16px
+$border-radius-full: 50%;
+
+// 阴影
+$shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+$shadow-base: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.12);
+
+// 边框
+$border-width: 2rpx;          // 1px
+$border-color: $neutral-300;
+
+// 动画时长
+$transition-fast: 0.15s;
+$transition-base: 0.3s;
+$transition-slow: 0.5s;

@@ -1,0 +1,121 @@
+@import '../../../assets/styles/variables.scss';
+
+.portfolio-grid {
+  &__grid {
+    display: grid;
+    gap: $spacing-base;
+  }
+
+  &__waterfall {
+    display: flex;
+    gap: $spacing-base;
+  }
+
+  &__column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-base;
+  }
+
+  &__item {
+    background-color: $neutral-100;
+    border-radius: $border-radius-base;
+    overflow: hidden;
+    box-shadow: $shadow-sm;
+    transition: all $transition-base;
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: $shadow-base;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    min-height: 200rpx;
+  }
+
+  &__video-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60rpx;
+    height: 60rpx;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__video-icon {
+    color: $neutral-100;
+    font-size: $font-size-lg;
+    margin-left: 4rpx; // 调整播放图标位置
+  }
+
+  &__info {
+    padding: $spacing-base;
+  }
+
+  &__title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $neutral-600;
+    line-height: 1.4;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-xs;
+    color: $neutral-400;
+  }
+
+  &__likes {
+    color: $accent-rose;
+  }
+
+  &__date {
+    color: $neutral-400;
+  }
+
+  // 瀑布流模式特殊样式
+  &--waterfall {
+    .portfolio-grid__image {
+      // 瀑布流中图片高度自适应
+      height: auto;
+      aspect-ratio: auto;
+    }
+  }
+
+  // 响应式调整
+  @media (max-width: 750rpx) {
+    &__grid {
+      gap: $spacing-sm;
+    }
+
+    &__waterfall {
+      gap: $spacing-sm;
+    }
+
+    &__column {
+      gap: $spacing-sm;
+    }
+
+    &__info {
+      padding: $spacing-sm;
+    }
+  }
+}

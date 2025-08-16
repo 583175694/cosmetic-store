@@ -1,0 +1,7 @@
+// 全局样式入口
+@import './assets/styles/variables.scss';
+@import './assets/styles/mixins.scss';
+@import './assets/styles/base.scss';
+
+// Taroify 组件库样式
+@import '@taroify/core/index.scss';

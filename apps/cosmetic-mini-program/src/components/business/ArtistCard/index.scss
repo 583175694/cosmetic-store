@@ -1,0 +1,169 @@
+@import '../../../assets/styles/variables.scss';
+
+.artist-card {
+  background-color: $neutral-100;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $shadow-base;
+  }
+
+  &__avatar-container {
+    position: relative;
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $neutral-200;
+  }
+
+  &__avatar {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    border: 4rpx solid $neutral-100;
+  }
+
+  &__badge {
+    position: absolute;
+    top: $spacing-base;
+    right: $spacing-base;
+    background-color: $accent-gold;
+    color: $neutral-100;
+    font-size: $font-size-xs;
+    padding: 4rpx $spacing-xs;
+    border-radius: $border-radius-sm;
+  }
+
+  &__content {
+    padding: $spacing-base;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__name {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $neutral-600;
+    display: block;
+    margin-bottom: 4rpx;
+  }
+
+  &__title {
+    font-size: $font-size-sm;
+    color: $neutral-400;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-base;
+  }
+
+  &__review-count {
+    font-size: $font-size-xs;
+    color: $neutral-400;
+  }
+
+  &__experience {
+    font-size: $font-size-sm;
+    color: $neutral-500;
+    text-align: center;
+    margin-bottom: $spacing-base;
+  }
+
+  &__specialties {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: $spacing-base;
+    font-size: $font-size-sm;
+  }
+
+  &__specialties-label {
+    color: $neutral-400;
+    margin-right: $spacing-xs;
+    flex-shrink: 0;
+  }
+
+  &__specialties-text {
+    color: $neutral-500;
+    line-height: 1.4;
+  }
+
+  &__select-button {
+    width: 100%;
+    border-color: $primary-blue;
+    color: $primary-blue;
+
+    &:active {
+      background-color: $primary-blue;
+      color: $neutral-100;
+    }
+  }
+
+  // 紧凑模式
+  &--compact {
+    .artist-card__avatar-container {
+      height: 140rpx;
+    }
+
+    .artist-card__avatar {
+      width: 80rpx;
+      height: 80rpx;
+    }
+
+    .artist-card__content {
+      padding: $spacing-sm;
+    }
+
+    .artist-card__name {
+      font-size: $font-size-base;
+    }
+  }
+
+  // 水平模式
+  &--horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .artist-card__avatar-container {
+      width: 120rpx;
+      height: 120rpx;
+      flex-shrink: 0;
+      margin-right: $spacing-base;
+    }
+
+    .artist-card__avatar {
+      width: 100rpx;
+      height: 100rpx;
+    }
+
+    .artist-card__content {
+      flex: 1;
+      padding: $spacing-base 0;
+    }
+
+    .artist-card__header {
+      text-align: left;
+    }
+
+    .artist-card__rating {
+      justify-content: flex-start;
+    }
+
+    .artist-card__experience {
+      text-align: left;
+    }
+  }
+}

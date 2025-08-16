@@ -1,0 +1,12 @@
+@import '../../../assets/styles/variables.scss';
+
+.page-layout {
+  min-height: 100vh;
+  background-color: $primary-cream;
+  position: relative;
+
+  &__content {
+    width: 100%;
+    min-height: 100vh;
+  }
+}

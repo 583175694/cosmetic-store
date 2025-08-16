@@ -1,0 +1,40 @@
+@import '../../../assets/styles/variables.scss';
+
+.tab-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__content {
+    flex: 1;
+    padding-bottom: 100rpx; // 为底部tabbar留出空间
+  }
+
+  &__tabbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $neutral-100;
+    border-top: 2rpx solid $neutral-200;
+    z-index: 1000;
+
+    .taroify-tabbar__item {
+      color: $neutral-400;
+      
+      &--active {
+        color: $accent-gold;
+      }
+    }
+
+    .taroify-tabbar__icon {
+      font-size: 44rpx;
+      margin-bottom: 8rpx;
+    }
+
+    .taroify-tabbar__text {
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+    }
+  }
+}

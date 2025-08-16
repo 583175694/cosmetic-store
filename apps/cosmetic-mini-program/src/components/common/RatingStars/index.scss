@@ -1,0 +1,82 @@
+@import '../../../assets/styles/variables.scss';
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 4rpx;
+  }
+
+  &__star {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &--interactive {
+      cursor: pointer;
+      transition: transform $transition-fast;
+      
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__star-half {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__icon {
+    transition: color $transition-fast;
+    
+    &--filled {
+      color: $accent-gold;
+    }
+    
+    &--half {
+      background: linear-gradient(90deg, $accent-gold 50%, $neutral-300 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    &--empty {
+      color: $neutral-300;
+    }
+  }
+
+  &__value {
+    font-size: $font-size-sm;
+    color: $neutral-500;
+    font-weight: $font-weight-medium;
+  }
+
+  // 尺寸变体
+  &--small {
+    .rating-stars__icon {
+      font-size: 28rpx;
+    }
+  }
+
+  &--medium {
+    .rating-stars__icon {
+      font-size: 32rpx;
+    }
+  }
+
+  &--large {
+    .rating-stars__icon {
+      font-size: 40rpx;
+    }
+  }
+}

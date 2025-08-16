@@ -1,0 +1,131 @@
+@import '../../../assets/styles/variables.scss';
+
+.service-card {
+  background-color: $neutral-100;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  transition: all $transition-base;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $shadow-base;
+  }
+
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 240rpx;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__tags {
+    position: absolute;
+    top: $spacing-base;
+    left: $spacing-base;
+    display: flex;
+    gap: $spacing-xs;
+  }
+
+  &__tag {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: $neutral-100;
+    font-size: $font-size-xs;
+    padding: 4rpx $spacing-xs;
+    border-radius: $border-radius-sm;
+  }
+
+  &__content {
+    padding: $spacing-base;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $neutral-600;
+    flex: 1;
+    margin-right: $spacing-base;
+  }
+
+  &__price {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $accent-gold;
+  }
+
+  &__description {
+    font-size: $font-size-sm;
+    color: $neutral-500;
+    line-height: 1.4;
+    margin-bottom: $spacing-base;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-base;
+    font-size: $font-size-xs;
+    color: $neutral-400;
+  }
+
+  &__duration,
+  &__deposit {
+    font-size: $font-size-xs;
+    color: $neutral-400;
+  }
+
+  &__book-button {
+    width: 100%;
+    background-color: $primary-blue;
+    border-color: $primary-blue;
+    color: $neutral-600;
+    font-weight: $font-weight-medium;
+
+    &:active {
+      background-color: darken($primary-blue, 10%);
+    }
+  }
+
+  // 紧凑模式
+  &--compact {
+    .service-card__image-container {
+      height: 160rpx;
+    }
+
+    .service-card__content {
+      padding: $spacing-sm;
+    }
+
+    .service-card__title {
+      font-size: $font-size-base;
+    }
+
+    .service-card__price {
+      font-size: $font-size-base;
+    }
+  }
+
+  // 详细模式
+  &--detailed {
+    .service-card__image-container {
+      height: 300rpx;
+    }
+
+    .service-card__description {
+      -webkit-line-clamp: 3;
+    }
+  }
+}
